@@ -17,3 +17,9 @@ command: describe table gigs;
             | updatedAt     | datetime     | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
             +---------------+--------------+------+-----+-------------------+-------------------+
 </pre>
+
+## Visuals
+1. gigs route [For now every entry is hard coded]
+
+
+<img src="https://user-images.githubusercontent.com/34310411/91473924-31c6e900-e8b7-11ea-9e10-4e42b1ee917e.png"></img>
