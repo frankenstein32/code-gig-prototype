@@ -7,6 +7,10 @@ const router = express.Router();
 router.get('/', (req, res) => {
     Gig.findAll()
     .then(gigs => {
+        // var obj = gigs[1];
+        // console.log("-------------");
+        // console.log({obj});
+        // console.log("-------------");
         res.render('gigs', {gigs});
     })
     .catch(err => console.log(`Error: ${err}`));
