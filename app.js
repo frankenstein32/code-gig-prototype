@@ -19,7 +19,7 @@ db.authenticate()
 .catch(err => console.log(`Error: ${err}`));
 
 // Get route for app.js
-app.get('/', (req, res) => res.render("INDEX"));
+app.get('/', (req, res) => res.render("index", {layout: 'landing'}));
 
 //gigs route for app.js
 app.use('/gigs/', require('./routes/gigs'));

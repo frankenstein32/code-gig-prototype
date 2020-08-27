@@ -16,8 +16,11 @@ router.get('/', (req, res) => {
     .catch(err => console.log(`Error: ${err}`));
 });
 
+// get route to add data
+router.get('/add/',(req, res) => res.render("add"));
+
 // Middleware to add values in db
-router.use('/add/',(req, res) => {
+router.post('/add/',(req, res) => {
 
     const data = {
         title: 'Demo-title-5',
