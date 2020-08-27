@@ -31,6 +31,6 @@ command: describe table gigs;
 
 <img src="https://user-images.githubusercontent.com/34310411/91500844-ee35a480-e8e1-11ea-9aa2-926e443cc6cc.png"></img>
 
-2.3 add route [The add entry form]
+3 add route [The add entry form]
 
 <img src="https://user-images.githubusercontent.com/34310411/91500988-4076c580-e8e2-11ea-8a1a-75842a7a2076.png"></img>
