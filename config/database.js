@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 
-if(process.env.DATABASE_URL){
-    module.exports = new Sequelize(process.env.DATABASE_URL, {
+if(process.env.HEROKU_POSTGRESQL_BRONZE_URL){
+    module.exports = new Sequelize(process.env.HEROKU_POSTGRESQL_BRONZE_URL, {
         dialect: 'postgres',
         protocol: 'postgres',
         logging: true
@@ -10,6 +10,6 @@ if(process.env.DATABASE_URL){
     module.exports = new Sequelize('codegig', 'frankenstein', '123456', {
         dialect: 'postgres',
         protocol: 'postgres',
-        logging: true
+        logging: true,
       });
 }
