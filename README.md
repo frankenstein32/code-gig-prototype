@@ -18,6 +18,7 @@ command: describe table gigs;
             +---------------+--------------+------+-----+-------------------+-------------------+
 </pre>
 
+
 ## Visuals
 1. Main Page [Main Landing Page]
 
@@ -37,5 +38,10 @@ command: describe table gigs;
 
 
 
+__Note:__
+1. Originally I designed the code using __mysql__ database but due to paid plan of hosting on heroku, this project is now shifted to __postgresql__.
+2. This website may took some time to open at first due to heroku policy of making any non-usable app to standby.
+3. This project is only to study and practice the backend implementation as well as deployment of website on heroku.
 
-## Website Link: <a href="https://code-gig-prototype.herokuapp.com/">click here!</a>
+
+## Web-App Link: <a href="https://code-gig-prototype.herokuapp.com/">click here!</a>
