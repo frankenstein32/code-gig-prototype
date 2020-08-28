@@ -17,6 +17,12 @@ const db = require('../config/database');
     contact_email: {
         type: Sequelize.STRING
     },
+    createdat: {
+        type: Sequelize.DATE
+    },
+    deletedat: {
+        type: Sequelize.DATE
+    },
 });
 
 Gig.sync().then( () => {
