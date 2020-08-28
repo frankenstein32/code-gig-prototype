@@ -19,4 +19,8 @@ const db = require('../config/database');
     },
 });
 
+Gig.sync().then( () => {
+    console.log("Table Created");
+});
+
 module.exports = Gig;

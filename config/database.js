@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 
 module.exports = new Sequelize('codegig', 'frankenstein', '123456', {
     host: 'localhost',
-    dialect: 'mysql',
+    dialect: 'postgres',
     operatorAliases: false,
 
     pool:{
