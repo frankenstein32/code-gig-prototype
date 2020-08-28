@@ -41,9 +41,11 @@ a:hover {
 
 .error {
   padding: 5px;
-  border: #777 dotted 1px;
-  margin-bottom: 15px;
+  border: #777 solid 1px;
+  margin-bottom: 10px;
+  background-color: rgb(200, 0, 0);
 }
+
 
 /* Header */
 header {

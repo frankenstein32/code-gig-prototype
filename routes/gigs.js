@@ -2,47 +2,85 @@ const express = require('express');
 const db = require('../config/database');
 const Gig = require('../models/Gig');
 const router = express.Router();
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 
 // get Route
 router.get('/', (req, res) => {
     Gig.findAll()
     .then(gigs => {
-        // var obj = gigs[1];
-        // console.log("-------------");
-        // console.log({obj});
-        // console.log("-------------");
         res.render('gigs', {gigs});
     })
     .catch(err => console.log(`Error: ${err}`));
 });
 
 // get route to add data
-router.get('/add/',(req, res) => res.render("add"));
+router.get('/add',(req, res) => res.render("add"));
 
 // Middleware to add values in db
-router.post('/add/',(req, res) => {
+router.post('/add',(req, res) => {
+    let {title, technologies, description, budget, contact_email} = req.body;
 
-    const data = {
-        title: 'Demo-title-5',
-        technologies: 'Demo5.js',
-        description: `This is a demp description and hence it will not make 
-        any sense but still try to understand the aim behind writing this 
-        useless piece of para`,
-        budget: '655200 Rs',
-        contact_email: 'demo5@gmail.com'
-    };
+    let errors = []
 
-    let {title, technologies, description, budget, contact_email} = data;
+    if(!title){
+        errors.push({text: 'Please enter the title before proceeding!!!'});
+    }
 
-    Gig.create({
-        title,
-        technologies,
-        description,
-        budget,
-        contact_email
-    })
-    .then(gig => res.redirect('/gigs'))
-    .catch(err => console.log(`Error: ${err}`));
+    if(!technologies){
+        errors.push({text: 'Please enter the technologies before proceeding!!!'});
+    }
+
+    if(!description){
+        errors.push({text: 'Please enter the description before proceeding!!!'});
+    }
+
+    if(!contact_email){
+        errors.push({text: 'Please enter the contact_email before proceeding!!!'});
+    }
+
+    if(errors.length > 0){
+
+        res.render("add", {
+            errors,
+            title,
+            description,
+            technologies,
+            budget,
+            contact_email
+        });
+
+    }else{
+
+        if(!budget){
+            budget = 'Unknown';
+        }else{
+            budget = `${budget} Rs`
+        }
+
+        technologies = technologies.toLowerCase().replace(/, /g, ',');
+        console.log(technologies);
+
+        Gig.create({
+            title,
+            technologies,
+            description,
+            budget,
+            contact_email
+        })
+        .then(gig => res.redirect('/gigs'))
+        .catch(err => console.log(`Error: ${err}`));
+    }
+});
+
+router.get('/search', (req, res) => {
+
+    let { term } = req.query;
+    term = term.toLowerCase();
+
+    Gig.findAll({ where : { technologies: {[Op.like]: `%${term}%`}}})
+    .then(gigs => res.render('gigs', {gigs}))
+    .catch(err => res.render('error', {error: err}));
 });
 
 
