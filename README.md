@@ -30,17 +30,19 @@ command: describe table gigs;
 
 2.2 gigs route [Fetching content from database now]
 
-<img src="https://user-images.githubusercontent.com/34310411/91500844-ee35a480-e8e1-11ea-9aa2-926e443cc6cc.png"></img>
+<img src="https://user-images.githubusercontent.com/34310411/91589136-dfe59800-e976-11ea-885e-5dba0cdbba1e.png"></img>
 
 3. add route [The add entry form]
 
 <img src="https://user-images.githubusercontent.com/34310411/91500988-4076c580-e8e2-11ea-8a1a-75842a7a2076.png"></img>
 
-3. Errors handled [Error Pop-ups]
+4. Errors handled [Error Pop-ups]
 
 <img src="https://user-images.githubusercontent.com/34310411/91588218-76b15500-e975-11ea-8f95-530e552a7bdc.png"></img>
 
+5. Searching Query + Result [Searched keyword = "Javascript"]
 
+<img src="https://user-images.githubusercontent.com/34310411/91589170-f0960e00-e976-11ea-8730-89a09dd6edc0.png"></img>
 
 __Note:__
 1. Originally I designed the code using __mysql__ database but due to paid plan of hosting on heroku, this project is now shifted to __postgresql__.
