@@ -20,7 +20,7 @@ const db = require('../config/database');
     createdat: {
         type: Sequelize.DATE
     },
-    deletedat: {
+    updatedat: {
         type: Sequelize.DATE
     },
 });
