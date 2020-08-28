@@ -16,13 +16,7 @@ const db = require('../config/database');
     },
     contact_email: {
         type: Sequelize.STRING
-    },
-    createdat: {
-        type: Sequelize.DATE
-    },
-    updatedat: {
-        type: Sequelize.DATE
-    },
+    }
 });
 
 Gig.sync().then( () => {
